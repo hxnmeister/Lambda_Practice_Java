@@ -206,7 +206,7 @@ public class GameConsole implements Powered {
     }
 
     public void noConnectedGamepads(final int maxCheckCycles) {
-        while(this.waitingCounter <= maxCheckCycles){
+        while(this.waitingCounter <= maxCheckCycles && (this.firstGamepad.isOn() || this.secondGamepad.isOn())){
             System.out.println(" Please connect gamepad!");
             ++this.waitingCounter;
 
